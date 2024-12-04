@@ -12,7 +12,6 @@ import {
 import {
   ArchiveBox,
   CircleDashed,
-  Columns,
   MagnifyingGlass,
 } from "phosphor-react";
 import { styled, alpha } from "@mui/material/styles";
