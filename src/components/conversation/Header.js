@@ -1,11 +1,22 @@
 import { faker } from "@faker-js/faker";
-import { Avatar, Box, Divider, IconButton, Stack, Typography, useTheme } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Divider,
+  IconButton,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import React from "react";
 import StyledBadge from "../StyleBadge";
+import { ToggleSideBar } from "../../redux/slices/app";
+import { useDispatch } from "react-redux";
 
 export const Header = () => {
-    const theme = useTheme();
+  const theme = useTheme();
+  const dispatch = useDispatch();
   return (
     <Box
       p={2}
@@ -24,7 +35,14 @@ export const Header = () => {
         justifyContent={"space-between"}
         sx={{ width: "100%", height: "100%" }}
       >
-        <Stack direction={"row"} spacing={2}>
+        <Stack
+          onClick={() => {
+            //
+            dispatch(ToggleSideBar());
+          }}
+          direction={"row"}
+          spacing={2}
+        >
           <Box>
             <StyledBadge
               overlap="circular"
@@ -44,7 +62,7 @@ export const Header = () => {
             <VideoCamera />
           </IconButton>
           <IconButton>
-            <Phone/>
+            <Phone />
           </IconButton>
           <IconButton>
             <MagnifyingGlass />

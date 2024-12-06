@@ -175,7 +175,7 @@ const Chats = () => {
           <Stack
             spacing={10}
             direction="column"
-            sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}
+            sx={{ flexGrow: 1, overflowY: "scroll", height: "100%" }}
           >
             <SimpleBarStyle timeout={500} clickOnTrack={false}>
               {/* pinned */}
