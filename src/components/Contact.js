@@ -19,7 +19,7 @@ export const Contact = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
   return (
-    <Box sx={{ width: "320px", height: "100vh" }}>
+    <Box sx={{ width: 320, height: "100vh" }}>
       <Stack sx={{ height: "100%" }}>
         {/* Header */}
         <Box
@@ -39,7 +39,7 @@ export const Contact = () => {
             justifyContent={"space-between"}
             spacing={3}
           >
-            <Typography variant="subtitle2">Contact Info</Typography>
+            <Typography p={3} variant="subtitle2">Contact Info</Typography>
             <IconButton
               onClick={() => {
                 dispatch(ToggleSideBar());
