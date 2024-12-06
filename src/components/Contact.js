@@ -39,7 +39,7 @@ export const Contact = () => {
             justifyContent={"space-between"}
             spacing={3}
           >
-            <Typography variant="subtitle2">Contact Info</Typography>
+            <Typography p={3} variant="subtitle2">Contact Info</Typography>
             <IconButton
               onClick={() => {
                 dispatch(ToggleSideBar());
