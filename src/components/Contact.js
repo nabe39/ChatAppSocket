@@ -19,7 +19,7 @@ export const Contact = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
   return (
-    <Box sx={{ width: "320px", height: "100vh" }}>
+    <Box sx={{ width: 320, height: "100vh" }}>
       <Stack sx={{ height: "100%" }}>
         {/* Header */}
         <Box
