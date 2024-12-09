@@ -9,11 +9,7 @@ import {
   Avatar,
   Badge,
 } from "@mui/material";
-import {
-  ArchiveBox,
-  CircleDashed,
-  MagnifyingGlass,
-} from "phosphor-react";
+import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
 import { styled, alpha } from "@mui/material/styles";
 import React from "react";
 import { faker } from "@faker-js/faker";
@@ -85,7 +81,7 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
         </Stack>
         <Stack spacing={2} alignItems="center">
           <Typography sx={{ fontWeight: 600 }} variant="caption">
-            9:36
+            {time}
           </Typography>
           <Badge color="primary" badgeContent={unread} />
         </Stack>

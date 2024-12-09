@@ -27,7 +27,7 @@ const CustomTypography = styled(Typography)(({ theme }) => ({
     fontWeight: 600,
   },
 }));
-const DocMsg = ({ el }) => {
+const DocMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
@@ -35,8 +35,8 @@ const DocMsg = ({ el }) => {
         p={1.5}
         sx={{
           backgroundColor: el.incoming
-            ? theme.palette.warning.main
-            : theme.palette.success.dark,
+            ? theme.palette.background.default
+            : theme.palette.primary.main,
           borderRadius: 1.5,
           width: "max-context",
         }}
@@ -66,11 +66,11 @@ const DocMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOption />
+      {menu && <MessageOption />}
     </Stack>
   );
 };
-const LinkMsg = ({ el }) => {
+const LinkMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
@@ -78,8 +78,8 @@ const LinkMsg = ({ el }) => {
         p={1.5}
         sx={{
           backgroundColor: el.incoming
-            ? theme.palette.warning.main
-            : theme.palette.success.dark,
+            ? theme.palette.background.default
+            : theme.palette.primary.main,
           borderRadius: 1.5,
           width: "max-context",
         }}
@@ -103,7 +103,7 @@ const LinkMsg = ({ el }) => {
               <Typography variant="subtitle2">Creating Chat app</Typography>
               <Typography
                 variant="subtitle2"
-                sx={{ color: theme.palette.warning.main }}
+                sx={{ color: theme.palette.background.default }}
                 component={Link}
                 to="https://www.youtube.com"
               >
@@ -119,11 +119,11 @@ const LinkMsg = ({ el }) => {
           </Stack>
         </Stack>
       </Box>
-      <MessageOption />
+      {menu && <MessageOption />}
     </Stack>
   );
 };
-const ReplyMsg = ({ el }) => {
+const ReplyMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
@@ -131,8 +131,8 @@ const ReplyMsg = ({ el }) => {
         p={1.5}
         sx={{
           backgroundColor: el.incoming
-            ? theme.palette.warning.main
-            : theme.palette.success.dark,
+            ? theme.palette.background.default
+            : theme.palette.primary.main,
           borderRadius: 1.5,
           width: "max-context",
         }}
@@ -160,11 +160,11 @@ const ReplyMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOption />
+      {menu && <MessageOption />}
     </Stack>
   );
 };
-const MediaMsg = ({ el }) => {
+const MediaMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
@@ -172,8 +172,8 @@ const MediaMsg = ({ el }) => {
         p={1.5}
         sx={{
           backgroundColor: el.incoming
-            ? theme.palette.warning.main
-            : theme.palette.success.dark,
+            ? theme.palette.background.paper
+            : theme.palette.primary.main,
           borderRadius: 1.5,
           width: "max-context",
         }}
@@ -192,11 +192,11 @@ const MediaMsg = ({ el }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOption />
+      {menu && <MessageOption />}
     </Stack>
   );
 };
-const TextMsg = ({ el }) => {
+const TextMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction={"row"} justifyContent={el.incoming ? "start" : "end"}>
@@ -204,21 +204,21 @@ const TextMsg = ({ el }) => {
         p={1.5}
         sx={{
           backgroundColor: el.incoming
-            ? theme.palette.warning.main
-            : theme.palette.success.dark,
+            ? theme.palette.background.paper
+            : theme.palette.primary.main,
           borderRadius: 1.5,
           width: "max-context",
         }}
       >
-        <CustomTypography
+        <Typography
           style={{ color: el.incoming ? theme.palette.text : "#fff" }}
           variant="body2"
-          // color={el.incoming ? theme.palette.text : "#fff"}
+          color={el.incoming ? theme.palette.text : "#fff"}
         >
           {el.message}
-        </CustomTypography>
+        </Typography>
       </Box>
-      <MessageOption />
+      {menu && <MessageOption />}
     </Stack>
   );
 };
