@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { CaretDown, MagnifyingGlass, Phone, VideoCamera } from "phosphor-react";
 import React from "react";
-import StyledBadge from "../StyleBadge";
+import StyledBadge from "../StyledBadge";
 import { ToggleSideBar } from "../../redux/slices/app";
 import { useDispatch } from "react-redux";
 
