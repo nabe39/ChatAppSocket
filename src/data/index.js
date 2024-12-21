@@ -46,6 +46,77 @@ const Nav_Setting = [
   },
 ];
 
+const Memberslist = [
+  {
+    index: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    index: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+  },
+  {
+    index: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+  {
+    index: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: false,
+  },
+  {
+    index: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    online: true,
+  },
+];
+
+const CallLogs = [
+  {
+    index: 0,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: true,
+  },
+  {
+    index: 1,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: true,
+  },
+  {
+    index: 2,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: false,
+  },
+  {
+    index: 3,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: false,
+    incoming: false,
+  },
+  {
+    index: 4,
+    img: faker.image.avatar(),
+    name: faker.name.firstName(),
+    missed: true,
+    incoming: true,
+  },
+];
+
 const ChatList = [
   {
     id: 0,
@@ -295,4 +366,6 @@ export {
   Message_options,
   SHARED_DOCS,
   SHARED_LINKS,
+  CallLogs,
+  Memberslist,
 };
