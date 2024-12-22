@@ -15,9 +15,38 @@ import AntSwitch from "../../components/AntSwitch";
 import { faker } from "@faker-js/faker";
 import Logo from "../../assets/Images/logo.ico";
 import useSettings from "../../hooks/useSettings";
+import { useNavigate } from "react-router-dom";
 
+const getPath = (index) => {
+  switch (index) {
+    case 0:
+      return "/app";
+    case 1:
+      return "/group";
+    case 2:
+      return "/call";
+    case 3:
+      return "/settings";
+    default:
+      break;
+  }
+};
+const getMenuPath = (index) => {
+  switch (index) {
+    case 0:
+      return "/profile";
+    case 1:
+      return "/settings";
+    case 2:
+      //TODO => update token $ set isAuth = false
+      return "/auth/login";
+    default:
+      break;
+  }
+};
 export const SideBar = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const [selected, setSelected] = useState(0);
   const { onToggleMode } = useSettings();
 
@@ -80,6 +109,7 @@ export const SideBar = () => {
                   <IconButton
                     onClick={() => {
                       setSelected(el.index);
+                      navigate(getPath(el.index));
                     }}
                     sx={{
                       width: "max-content",
@@ -105,7 +135,8 @@ export const SideBar = () => {
               ) : (
                 <IconButton
                   onClick={() => {
-                    setSelected(3);
+                    navigate(getPath(3));
+                    // setSelected(3);
                   }}
                   sx={{
                     width: "max-content",
@@ -154,10 +185,17 @@ export const SideBar = () => {
               }}
             >
               <Stack spacing={1} px={1}>
-                {Profile_Menu.map((el) => {
+                {Profile_Menu.map((el,idx) => {
                   return (
-                    <MenuItem onClick={handleClick}>
+                    <MenuItem
+                      onClick={() => {
+                        // handleClick();
+                      }}
+                    >
                       <Stack
+                        onClick={() => {
+                          navigate(getMenuPath(idx));
+                        }}
                         sx={{
                           width: "100px",
                         }}

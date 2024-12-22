@@ -103,7 +103,7 @@ const LinkMsg = ({ el, menu }) => {
               <Typography variant="subtitle2">Creating Chat app</Typography>
               <Typography
                 variant="subtitle2"
-                sx={{ color: theme.palette.background.default }}
+                sx={{ color: theme.palette.primary.main}}
                 component={Link}
                 to="https://www.youtube.com"
               >
